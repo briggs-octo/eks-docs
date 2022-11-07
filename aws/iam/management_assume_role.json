@@ -4,7 +4,7 @@
     {
       "Effect": "Allow",
       "Action": "sts:AssumeRole",
-      "Resource": "arn:aws:iam::<CLIENT_ACCOUNT_ID:role/iam_management_eks_role"
+      "Resource": "arn:aws:iam::<CLIENT_ACCOUNT_ID>:role/iam_management_eks_role"
     }
   ]
 }
