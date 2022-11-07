@@ -1,0 +1,11 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "EKSFullAccess",
+      "Effect": "Allow",
+      "Action": ["iam:ListRoles", "eks:*"],
+      "Resource": "*"
+    }
+  ]
+}
