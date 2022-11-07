@@ -1,2 +1,2 @@
-# eks-docs
+# AWS EKS Docs
 AWS EKS documentation
