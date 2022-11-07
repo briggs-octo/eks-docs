@@ -33,7 +33,7 @@ This section below assumes the following:
 
 1. Configure kubectl so that it can connect to `client_cluster`.
    1. `aws eks update-kubeconfig --name client_cluster --region <AWS_REGION>`
-2. Apply [eks_management_config_map.yml](https://github.com/briggs-octo/eks-docs/blob/main/kubernetes/eks_management_config_map.yml) to `client cluster`.
+2. Apply [the following Config Map yaml](https://github.com/briggs-octo/eks-docs/blob/main/kubernetes/eks_management_config_map.yml) to `client cluster`.
    1. `kubectl apply -f eks_management_config_map.yml`
 
 ## Octopus Deploy EKS Configuration (Optional)
