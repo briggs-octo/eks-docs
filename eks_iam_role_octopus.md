@@ -22,10 +22,6 @@ This section below assumes the following:
 1. Configure kubectl so that it can connect to `client_cluster`.
    1. `aws eks update-kubeconfig --name client_cluster --region <region>`
 2. Apply [the following Kubernetes Config Map yaml]() to the cluster.
-   1. `kubectl apply -f client_config_map.yml`
+   1. `kubectl apply -f eks_role_config_map.yml`
 3. Describe the Config Map to confirm new values exist.
    1. `kubectl describe configmap -n kube-system aws-auth`
-4. Add a new cluster role binding connecting the Kubernetes cluster role `cluster-admin` to `iam_eks_service_role`.
-   1. `kubectl create clusterrolebinding octopus-admin-binding --clusterrole cluster-admin --user <iamRoleName>`
-5. Get the current cluster bindings to confirm the binding created in step 4 exists.
-   1. `kubectl get clusterrolebindings`
