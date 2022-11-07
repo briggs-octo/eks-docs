@@ -10,7 +10,7 @@
 
 ## Test Cross-Account Configuration (AWS Console) (Management Account)
 
-1. Log into the management AWS account using an IAM user with the ability to assume the role ([example policy here](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/management_assume_role.json))
+1. Log into the management AWS account using an IAM user with the ability to assume the role ([example policy here](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/management_assume_role.json)).
 2. Assume the role created in section 1 above via the right-hand account drop-down in the AWS Web UI (Switch Role button).
    1. Use the client account Id for the Account value and `iam_management_eks_role` for the Role value.  
 3. Navigate to the EKS service to verify that you can see the client account's cluster(s).
