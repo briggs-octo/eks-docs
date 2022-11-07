@@ -8,7 +8,7 @@
    2. Attach the IAM policy created in step 1 to this role (`eks_full_access`).
 3. Set [the following Trusted entities](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/eks_management_role_trusted_entities.json) via the `Trusted relationships` tab within the EKS service role created in step 1 (`iam_management_eks_role`).
 
-## Test Cross-Account Configuration (AWS) (Management Account)
+## Test Cross-Account Configuration (AWS Console) (Management Account)
 
 1. Log into the management AWS account using an IAM user with the ability to assume the role ([example policy here](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/management_assume_role.json))
 2. Assume the role created in section 1 above via the right-hand account drop-down in the AWS Web UI (Switch Role button).
