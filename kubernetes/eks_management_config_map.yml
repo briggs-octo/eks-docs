@@ -8,7 +8,7 @@ data:
     - groups:
       - system:bootstrappers
       - system:nodes
-      rolearn: arn:aws:iam::<CLIENT_ACCOUNT_ID>:instance-profile/<eks_service_role_name>
+      rolearn: arn:aws:iam::<CLIENT_ACCOUNT_ID>:role/iam_management_eks_role
       username: system:node:{{EC2PrivateDNSName}}
     - groups:
       - system:masters
