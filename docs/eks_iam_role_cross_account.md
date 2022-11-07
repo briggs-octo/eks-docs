@@ -2,15 +2,15 @@
 
 ## AWS Identity and Access Management console (IAM) (Client Account)
 
-1. Create [the following custom IAM policy]() named `eks_full_access` .
+1. Create [the following custom IAM policy](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/eks_full_access.json) named `eks_full_access` .
 2. Create a new IAM role (AWS Account Entity Type) named `iam_management_eks_role` that will allow the management account to access the EKS cluster in the client account.
    1. Supply the management account ID within the role.
    2. Attach the IAM policy created in step 1 to this role (`eks_full_access`).
-3. Set [the following Trusted entities]() via the `Trusted relationships` tab within the EKS service role created in step 1 (`iam_management_eks_role`).
+3. Set [the following Trusted entities](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/eks_management_role_trusted_entities.json) via the `Trusted relationships` tab within the EKS service role created in step 1 (`iam_management_eks_role`).
 
 ## Test Cross-Account Configuration (AWS) (Management Account)
 
-1. Log into the management AWS account using an IAM user with the ability to assume the role ([example policy here]())
+1. Log into the management AWS account using an IAM user with the ability to assume the role ([example policy here](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/management_assume_role.json))
 2. Assume the role created in section 1 above via the right-hand account drop-down in the AWS Web UI (Switch Role button).
    1. Use the client account Id for the Account value and `iam_management_eks_role` for the Role value.  
 3. Navigate to the EKS service to verify that you can see the client account's cluster(s).
