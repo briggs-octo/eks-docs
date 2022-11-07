@@ -1,4 +1,4 @@
-# EKS Internal Role-Based Authentication
+# EKS Internal Role-Based Authentication ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 ## AWS Identity and Access Management console (IAM) 
 
