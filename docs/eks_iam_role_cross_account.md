@@ -24,7 +24,7 @@
 This section below assumes the following:
 
 - The EKS cluster we want to manage via the IAM role `iam_management_eks_service_role` is named `client_cluster`.
-- The IAM user/role has access to `client_cluster`.
+- The IAM user/role has access to run commands against `client_cluster`.
 - The correct version of kubectl is installed.
   
 ---
