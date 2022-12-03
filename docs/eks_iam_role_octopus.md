@@ -9,7 +9,7 @@
 ---
 **NOTE**
 
-This section below assumes the following:
+The section below assumes the following:
 
 - The EKS cluster we want to manage via the IAM role `iam_eks_service_role` is named `client_cluster`.
 - The IAM user/role has access to `client_cluster`.
