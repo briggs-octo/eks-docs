@@ -1,12 +1,21 @@
 # EKS Cross-Account Role-Based Authentication ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
+## Context
+
+By default, EKS resources are visible only to the role that created the cluster. If you've changed your IAM structure, or need to enable cross-account visibility (e.g. in the instance of a shared services AWS account), you need to take additional steps both at the AWS authentication and the underlying EKS levels to enable appropriate visibility.
+
+This guide shows the required steps assuming the following scenario:
+
+* There is a _client AWS account_ that has a preexisting EKS cluster
+* There is a _management AWS account_ that wants to be able to access and read the information about the EKS resources
+
 ## AWS Identity and Access Management console (IAM) (Client Account)
 
 1. Create [the following custom IAM policy](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/eks_full_access.json) named `eks_full_access` .
 2. Create a new IAM role (AWS Account Entity Type) named `iam_management_eks_role` that will allow the management account to access the EKS cluster in the client account.
    1. Supply the management account ID within the role.
    2. Attach the IAM policy created in step 1 to this role (`eks_full_access`).
-3. Set [the following Trusted entities](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/eks_management_role_trusted_entities.json) via the `Trusted relationships` tab within the EKS service role created in step 1 (`iam_management_eks_role`).
+3. Ensure that the Trusted Entities for the `iam_management_eks_role` IAM role created in step 2 (visible via the `Trusted relationships` tab) contains [the following Trusted entities](https://github.com/briggs-octo/eks-docs/blob/main/aws/iam/eks_management_role_trusted_entities.json).
 
 ## Test Cross-Account Configuration (AWS Console) (Management Account)
 
